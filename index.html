@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>Focus Timer — фокус и продуктивность</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <a class="logo" href="#" aria-label="Focus Timer">
+        <span class="logo-icon">◷</span>
+        <span>focus<span class="logo-accent">.</span></span>
+      </a>
+      <span class="header-label">MAKE TIME FOR WHAT MATTERS</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL FOCUS SPACE</p>
+      <h1>Меньше отвлечений.<br><span>Больше результата.</span></h1>
+      <p class="subtitle">Выбери задачу и посвяти ей немного времени.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="timer-card">
+        <div class="mode-tabs" role="group" aria-label="Режим таймера">
+          <button class="mode active" data-mode="focus">Фокус</button>
+          <button class="mode" data-mode="short">Короткий отдых</button>
+          <button class="mode" data-mode="long">Длинный отдых</button>
+        </div>
+
+        <div class="timer-ring">
+          <svg class="progress" viewBox="0 0 260 260" aria-hidden="true">
+            <circle class="progress-track" cx="130" cy="130" r="116"/>
+            <circle class="progress-value" id="progress" cx="130" cy="130" r="116"/>
+          </svg>
+          <div class="timer-content">
+            <span class="timer-label" id="timer-label">TIME TO FOCUS</span>
+            <time class="timer" id="timer" aria-live="off">25:00</time>
+            <span class="timer-hint" id="timer-hint">Один шаг за раз</span>
+          </div>
+        </div>
+
+        <div class="timer-actions">
+          <button class="reset-button" id="reset" aria-label="Сбросить таймер" title="Сбросить">↺</button>
+          <button class="start-button" id="start">Начать фокус <span>→</span></button>
+          <button class="reset-button" id="skip" aria-label="Следующий режим" title="Следующий режим">↠</button>
+        </div>
+
+        <p class="session-note">✳ <span id="session-count">0</span> завершённых фокус-сессий сегодня</p>
+      </div>
+
+      <aside class="tasks-card">
+        <div class="tasks-heading">
+          <div>
+            <p class="eyebrow">STAY ON TRACK</p>
+            <h2>Мои задачи<span class="task-count" id="task-count">0</span></h2>
+          </div>
+          <span class="list-icon">☷</span>
+        </div>
+
+        <form class="task-form" id="task-form">
+          <label class="visually-hidden" for="task-input">Новая задача</label>
+          <input id="task-input" type="text" maxlength="120"
+            placeholder="Что нужно сделать?" autocomplete="off">
+          <button type="submit" aria-label="Добавить задачу">+</button>
+        </form>
+
+        <ul class="task-list" id="task-list"></ul>
+
+        <div class="empty-state" id="empty-state">
+          <span>✳</span>
+          <p>Пока здесь пусто</p>
+          <small>Добавь задачу, чтобы начать.</small>
+        </div>
+
+        <div class="daily-progress">
+          <div class="daily-progress-label">
+            <span>Прогресс дня</span>
+            <strong id="task-progress-text">0 из 0</strong>
+          </div>
+          <div class="daily-progress-track">
+            <div class="daily-progress-value" id="task-progress"></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats-card">
+      <div class="stats-heading">
+        <div>
+          <p class="eyebrow">SMALL STEPS ADD UP</p>
+          <h2>Твой прогресс</h2>
+        </div>
+        <span class="stats-date" id="stats-date"></span>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-icon">◷</span>
+          <strong id="stat-minutes">0</strong>
+          <span>минут фокуса</span>
+        </div>
+        <div class="stat">
+          <span class="stat-icon">✓</span>
+          <strong id="stat-sessions">0</strong>
+          <span>завершённых сессий</span>
+        </div>
+        <div class="stat">
+          <span class="stat-icon">◎</span>
+          <strong id="stat-tasks">0</strong>
+          <span>выполненных задач</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>FOCUS ON WHAT MATTERS</span>
+      <span>Made for mindful productivity ✳</span>
+    </footer>
+  </main>
+</body>
+</html>
